@@ -1,0 +1,131 @@
+body {
+  background: #eee;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ *
+ * NEWSFEED
+ *
+ */
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 10px;
+  transition: filter 250ms;
+}
+
+.card {
+  background: #fff;
+  margin: 10px;
+  min-height: 300px;
+  padding: 10px;
+}
+
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@supports (display: flex) and (display: contents) {
+  .feed ul,
+  .feed li {
+    display: contents;
+  }
+
+  .card {
+    flex: 1 0 40%;
+  }
+}
+
+@supports (display: flex) and (not (display: contents)) {
+  .feed li {
+    flex: 1 0 50%;
+  }
+
+  .feed li.nested {
+    flex-basis: 100%;
+  }
+
+  .feed li.nested ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/**
+ *
+ * CHAT
+ *
+ */
+
+.chat {
+  background: #fff;
+  border: 10px solid #000;
+  bottom: 0;
+  font-size: 10px;
+  position: fixed;
+  right: 0;
+  width: 300px;
+  z-index: 10;
+}
+
+.messages {
+  border-bottom: 5px solid #000;
+  overflow: auto;
+  overscroll-behavior-y: contain;
+  padding: 10px;
+  max-height: 25px;
+  transition: max-height 500ms;
+}
+
+.message {
+  background: #000;
+  border-radius: 5px;
+  color: #fff;
+  margin: 0 20% 10px 0;
+  padding: 10px;
+}
+
+.messages li:last-child .message {
+  margin-bottom: 0;
+}
+
+.input {
+  border: none;
+  display: block;
+  padding: 10px;
+  width: 100%;
+}
+
+.prompt {
+  line-height: 2em;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 10px;
+  text-align: right;
+  transition: max-height 500ms;
+}
+
+.input:not(:placeholder-shown) + .prompt {
+  max-height: 2em;
+}
+
+/**
+ * Expand panel when it gets focus
+ */
+
+.chat:focus-within .messages {
+  max-height: 300px;
+}
+
+.chat:focus-within ~ .container {
+  filter: blur(5px);
+}
+

@@ -1,0 +1,15 @@
+{
+  "name": "hot-new-css-features",
+  "version": "1.0.0",
+  "description": "This repo accompanies a tutorial written for Web Designer magazine which shows you how and when to use five hot new CSS features",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "browser-sync start --server src --files src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Crisp <daniel@danielcrisp.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.23.6"
+  }
+}

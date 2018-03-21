@@ -1,0 +1,38 @@
+body {
+  background: #eee;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 10px;
+}
+
+.card {
+  background: #fff;
+  margin: 10px;
+  min-height: 300px;
+  padding: 10px;
+}
+
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@supports (display: contents) {
+  .feed ul,
+  .feed li {
+    display: contents;
+  }
+
+  .card {
+    flex: 1 0 40%;
+  }
+}

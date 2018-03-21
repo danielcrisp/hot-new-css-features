@@ -1,0 +1,47 @@
+/**
+ * Hot new CSS features
+ * --------------------
+ * Just some basic styles to provide some resets and visual clean up
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+code {
+  color: #e83e8c;
+  font-size: .9em;
+  word-break: break-word;
+}
+
+footer {
+  background: #fff;
+  bottom: 0;
+  padding: 16px;
+  position: fixed;
+  right: 0;
+  text-align: right;
+  width: 100%;
+}
+
+.wrapper {
+  padding: 0 16px 50px;
+}
+
+.wrapper li {
+  padding: 5px 0;
+}

@@ -1,0 +1,57 @@
+body {
+  background: #eee;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 10px;
+}
+
+.card {
+  background: #fff;
+  margin: 10px;
+  min-height: 300px;
+  padding: 10px;
+}
+
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@supports (display: flex) and (display: contents) {
+  .feed ul,
+  .feed li {
+    display: contents;
+  }
+
+  .card {
+    flex: 1 0 40%;
+  }
+}
+
+@supports (display: flex) and (not (display: contents)) {
+  .feed li {
+    flex: 1 0 50%;
+  }
+
+  .feed li.nested {
+    flex-basis: 100%;
+  }
+
+  .feed li.nested ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@supports (--foo: green) {
+   /* Just an example of testing for custom properties */
+}
